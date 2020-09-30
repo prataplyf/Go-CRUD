@@ -34,6 +34,7 @@ func getBooks(w http.ResponseWriter, r *http.Request) {
 }
 
 // Get Single Book
+// get by Book id
 func getBook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r) // Get params
@@ -48,6 +49,7 @@ func getBook(w http.ResponseWriter, r *http.Request) {
 }
 
 // Create a new Book
+// data : {"Isbn":"456776", "Title":"Add new Book", "Author":{"FirstName": "My", "LastName": "Name"}}
 func createBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var book Book
@@ -58,6 +60,7 @@ func createBooks(w http.ResponseWriter, r *http.Request) {
 }
 
 // Update Single Book
+// data : {"Isbn":"456776", "Title":"Add new Book", "Author":{"FirstName": "My", "LastName": "Name"}}
 func updateBook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
@@ -76,6 +79,7 @@ func updateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 // Delete Single Book
+// delete by Book id
 func deleteBook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
